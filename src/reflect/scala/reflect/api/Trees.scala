@@ -2368,143 +2368,15 @@ trait Trees { self: Universe =>
 
 // ---------------------- factories ----------------------------------------------
 
-  /** A factory method for `ClassDef` nodes.
-   *  @group Factories
-   */
-  def ClassDef(sym: Symbol, impl: Template): ClassDef
-
-  /** A factory method for `ModuleDef` nodes.
-   *  @group Factories
-   */
-  def ModuleDef(sym: Symbol, impl: Template): ModuleDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def ValDef(sym: Symbol, rhs: Tree): ValDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def ValDef(sym: Symbol): ValDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def DefDef(sym: Symbol, mods: Modifiers, vparamss: List[List[ValDef]], rhs: Tree): DefDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def DefDef(sym: Symbol, vparamss: List[List[ValDef]], rhs: Tree): DefDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def DefDef(sym: Symbol, mods: Modifiers, rhs: Tree): DefDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def DefDef(sym: Symbol, rhs: Tree): DefDef
-
-  /** A factory method for `ValDef` nodes.
-   *  @group Factories
-   */
-  def DefDef(sym: Symbol, rhs: List[List[Symbol]] => Tree): DefDef
-
-  /** A factory method for `TypeDef` nodes.
-   *  @group Factories
-   */
-  def TypeDef(sym: Symbol, rhs: Tree): TypeDef
-
-  /** A factory method for `TypeDef` nodes.
-   *  @group Factories
-   */
-  def TypeDef(sym: Symbol): TypeDef
-
-  /** A factory method for `LabelDef` nodes.
-   *  @group Factories
-   */
-  def LabelDef(sym: Symbol, params: List[Symbol], rhs: Tree): LabelDef
-
-  /** A factory method for `Block` nodes.
-   *  Flattens directly nested blocks.
-   *  @group Factories
-   */
-  def Block(stats: Tree*): Block
-
-  /** A factory method for `CaseDef` nodes.
-   *  @group Factories
-   */
-  def CaseDef(pat: Tree, body: Tree): CaseDef
-
-  /** A factory method for `Bind` nodes.
-   *  @group Factories
-   */
-  def Bind(sym: Symbol, body: Tree): Bind
-
-  /** A factory method for `Try` nodes.
-   *  @group Factories
-   */
-  def Try(body: Tree, cases: (Tree, Tree)*): Try
-
-  /** A factory method for `Throw` nodes.
-   *  @group Factories
-   */
-  def Throw(tpe: Type, args: Tree*): Throw
-
-  /** Factory method for object creation `new tpt(args_1)...(args_n)`
-   *  A `New(t, as)` is expanded to: `(new t).<init>(as)`
-   *  @group Factories
-   */
-  def New(tpt: Tree, argss: List[List[Tree]]): Tree
-
-  /** 0-1 argument list new, based on a type.
-   *  @group Factories
-   */
-  def New(tpe: Type, args: Tree*): Tree
-
-  /** 0-1 argument list new, based on a symbol.
-   *  @group Factories
-   */
-  def New(sym: Symbol, args: Tree*): Tree
-
-  /** A factory method for `Apply` nodes.
-   *  @group Factories
-   */
-  def Apply(sym: Symbol, args: Tree*): Tree
-
-  /** 0-1 argument list new, based on a type tree.
-   *  @group Factories
-   */
-  def ApplyConstructor(tpt: Tree, args: List[Tree]): Tree
-
-  /** A factory method for `Super` nodes.
-   *  @group Factories
-   */
-  def Super(sym: Symbol, mix: TypeName): Tree
-
   /** A factory method for `This` nodes.
    *  @group Factories
    */
   def This(sym: Symbol): Tree
 
   /** A factory method for `Select` nodes.
-   *  The string `name` argument is assumed to represent a [[scala.reflect.api.Names#TermName `TermName`]].
-   *  @group Factories
-   */
-  def Select(qualifier: Tree, name: String): Select
-
-  /** A factory method for `Select` nodes.
    *  @group Factories
    */
   def Select(qualifier: Tree, sym: Symbol): Select
-
-  /** A factory method for `Ident` nodes.
-   *  @group Factories
-   */
-  def Ident(name: String): Ident
 
   /** A factory method for `Ident` nodes.
    *  @group Factories
