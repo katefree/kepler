@@ -165,7 +165,7 @@ trait GenTrees {
 
   private def reifyBoundType(tree: Tree): Tree = {
     val sym = tree.symbol
-    val tpe = tree.tpe
+    var tpe = tree.tpe
     if (tpe == null) {
        tpe = tree.attachments.get[AppliedTypeTreeOriginalAttachment] match {
          case Some(AppliedTypeTreeOriginalAttachment(tpe1)) => tpe1
