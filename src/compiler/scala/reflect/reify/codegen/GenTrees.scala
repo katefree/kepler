@@ -167,8 +167,8 @@ trait GenTrees {
     val sym = tree.symbol
     var tpe = tree.tpe
     if (tpe == null) {
-       tpe = tree.attachments.get[AppliedTypeTreeOriginalAttachment] match {
-         case Some(AppliedTypeTreeOriginalAttachment(tpe1)) => tpe1
+       tpe = tree.attachments.get[AppliedTypeTreeTypedTypeAttachment] match {
+         case Some(AppliedTypeTreeTypedTypeAttachment(tpe1)) => tpe1
          case _ => null
       }
     }

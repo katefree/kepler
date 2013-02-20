@@ -45,5 +45,5 @@ trait StdAttachments {
 
   /** Stores the type of AppiedTypeTree
   */  
-  case class AppliedTypeTreeOriginalAttachment(tpe: Type)
+  case class AppliedTypeTreeTypedTypeAttachment(tpe: Type)
 }
